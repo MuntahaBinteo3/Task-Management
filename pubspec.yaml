@@ -39,6 +39,7 @@ dependencies:
   get_x: ^5.0.0
   custom_toast: ^0.0.3
   http: ^1.6.0
+  google_fonts:
 
 
 

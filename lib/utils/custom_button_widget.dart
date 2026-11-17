@@ -1,52 +1,36 @@
-
 import 'package:flutter/material.dart';
-import 'package:task_management/Constant/colors.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-
-class PrimaryButton extends StatelessWidget {
+import '../Constant/colors.dart';
+class AppButton extends StatelessWidget {
   final String title;
-  final VoidCallback onPressed;
-  final bool showArrow;
+  final VoidCallback ontap;
 
-  const PrimaryButton({
-    super.key,
-    required this.title,
-    required this.onPressed,
-    this.showArrow = true,
-  });
+  const AppButton({super.key, required this.title, required this.ontap});
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: double.infinity,
-      height: 48,
-      child: ElevatedButton(
-        onPressed: onPressed,
-        style: ElevatedButton.styleFrom(
-          backgroundColor: AppColors.background,
-          foregroundColor: Colors.white,
-          elevation: 0,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(6),
-          ),
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Text(
-              title,
-              style: const TextStyle(
-                fontSize: 14,
-                fontWeight: FontWeight.w600,
-              ),
+    return ElevatedButton(
+      onPressed: () {
+        ontap();
+      },
+      style: ElevatedButton.styleFrom(
+        backgroundColor: AppColors.maincolor,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
+        fixedSize: Size(double.infinity, 54),
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            title,
+            style: GoogleFonts.poppins(
+              fontSize: 14,
+              fontWeight: FontWeight.w600,
+              color: Colors.white,
             ),
-            if (showArrow) ...[
-              const SizedBox(width: 8),
-              const Icon(Icons.chevron_right, size: 18),
-            ],
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

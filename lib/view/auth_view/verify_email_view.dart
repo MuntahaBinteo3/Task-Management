@@ -44,7 +44,7 @@ class VerifyEmailView extends StatelessWidget {
                           ),
                           const SizedBox(height: 8),
                           TextField(keyboardType: TextInputType.emailAddress,
-                              decoration: InputDecoration("Enter Your Email Address"),
+                              decoration: InputDecoration(hint:Text('gsdssf')),
                           ),
                         ],
                       ),

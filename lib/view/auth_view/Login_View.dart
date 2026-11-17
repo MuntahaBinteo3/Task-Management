@@ -9,7 +9,9 @@ import 'package:task_management/Constant/colors.dart';
 import 'package:task_management/utils/custom_text.dart';
 import 'package:task_management/view/auth_view/create_account_view.dart';
 import 'package:task_management/view/auth_view/custom_loader.dart';
+import '../../utils/custom_button_widget.dart';
 import 'custom_toast_message.dart' show CustomToast;
+import 'login_controaller.dart';
 
 
 class LoginView extends StatefulWidget {
@@ -20,7 +22,7 @@ class LoginView extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginView> {
-  final LoginController loginController = Get.put(loginController());
+  final LoginController loginController = Get.put(LoginController());
 
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
@@ -150,7 +152,7 @@ class _LoginScreenState extends State<LoginView> {
                     : SizedBox(
                   height: 55,
                   width: double.infinity,
-                  child: CustomButtonWidget(
+                  child: PrimaryButton(
                     btnColor: AppColors.maincolor,
                     onTap: () {
                       final email = emailController.text.trim();
