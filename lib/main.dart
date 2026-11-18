@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:task_management/view/auth_view/taskmanagerapp.dart';
+
 import 'package:task_management/view/splash_view/splash_view.dart';
 
 void main() {
@@ -12,14 +12,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(title: 'Task Management', home: SplashView());
+    return GetMaterialApp(title: 'Task Management', home: SplashView());
   }
 }
 
-@override
-Widget build(BuildContext context) {
-  return MaterialApp(
-    title: 'Task Management',
-    home: TaskManagerApp(),
-  );
-}
+

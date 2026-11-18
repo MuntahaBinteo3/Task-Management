@@ -1,14 +1,16 @@
 import 'dart:convert';
+
 import 'package:get/get.dart';
 import 'package:task_management/Constant/appurl.dart';
 import 'package:http/http.dart';
 
-class LoginController {
+class LoginController extends GetxController {
   var isLoading = false.obs;
 
   Future<void> login({required String email, required String password}) async {
     print('Login function called');
     try {
+      isLoading.value = true;
       var uri = Uri.parse(Appurl.login);
 
       print('Sending request...');
@@ -16,7 +18,7 @@ class LoginController {
       var response = await post(
         uri,
         headers: {'Content-Type': 'application/json'},
-        body: jsonEncode({'gmail': email, 'password': password}),
+        body: jsonEncode({'email': email, 'password': password}),
       );
 
       print('Status Code: ${response.statusCode}');
