@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class CustomToast {
   static void showToast(String message, {bool isError = false}) {
-   Fluttertoast.showToast(
+    Fluttertoast.showToast(
       msg: message,
       toastLength: Toast.LENGTH_LONG,
       timeInSecForIosWeb: 3,
-      gravity: ToastGravity.TOP,
+      gravity: ToastGravity.CENTER,
       backgroundColor: isError ? Colors.red : Colors.green,
       textColor: Colors.white,
       fontSize: 16.0,

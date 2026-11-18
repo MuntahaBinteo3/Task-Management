@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:task_management/view/auth_view/task_details.dart';
+import 'package:get/get.dart';
 import 'package:task_management/view/auth_view/taskmanagerapp.dart';
 import 'package:task_management/view/splash_view/splash_view.dart';
 

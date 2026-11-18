@@ -1,17 +1,15 @@
-
 import 'package:flutter/material.dart';
-import 'package:get_x/get.dart' show Obx;
-import 'package:get_x/get_core/src/get_main.dart';
-import 'package:get_x/get_instance/src/extension_instance.dart';
-import 'package:get_x/get_navigation/src/extension_navigation.dart';
-
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:get/get.dart';
 import 'package:task_management/Constant/colors.dart';
+import 'package:task_management/utils/custom_button_widget.dart';
+
 import 'package:task_management/utils/custom_text.dart';
 import 'package:task_management/view/auth_view/create_account_view.dart';
 import 'package:task_management/view/auth_view/custom_loader.dart';
-import '../../utils/custom_button_widget.dart';
+
 import 'custom_toast_message.dart' show CustomToast;
-import 'login_controaller.dart';
+import 'login_controller.dart';
 
 
 class LoginView extends StatefulWidget {
@@ -152,9 +150,9 @@ class _LoginScreenState extends State<LoginView> {
                     : SizedBox(
                   height: 55,
                   width: double.infinity,
-                  child: PrimaryButton(
-                    btnColor: AppColors.maincolor,
-                    onTap: () {
+                  child: AppButton(
+                    title:"log in",
+                    ontap: () {
                       final email = emailController.text.trim();
                       final password = passwordController.text.trim();
 
@@ -175,8 +173,7 @@ class _LoginScreenState extends State<LoginView> {
                         );
                       }
                     },
-                    iconWant: false,
-                    btnText: 'Log In',
+
                   ),
                 );
               }),

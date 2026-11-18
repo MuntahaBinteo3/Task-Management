@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:task_management/view/auth_view/Login_View.dart';
 import 'package:task_management/view/auth_view/verify_email_view.dart';
 
 class CreateAccountView extends StatefulWidget {
@@ -71,7 +70,7 @@ class _SignUpViewState extends State<CreateAccountView> {
                                   size: 20),
                               onPressed: () => setState(() => _isObscurePass = !_isObscurePass),
                             ),
-                          ),
+                           ),
                         ),
                         const SizedBox(height: 16),
 
@@ -173,6 +172,26 @@ class _SignUpViewState extends State<CreateAccountView> {
     return Padding(padding:
     const EdgeInsets.only(bottom: 16.0),
         child: TextField(keyboardType: type,
-            decoration: buildInputDecoration(hint)));
+            decoration: buildInputDecoration (hint)));
   }
+  InputDecoration buildInputDecoration(String hintText) {
+    return InputDecoration(
+      hintText: hintText,
+      hintStyle: const TextStyle(color: Colors.grey, fontSize: 14),
+      contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+      border: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(10),
+        borderSide: const BorderSide(color: Color(0xFFE5E7EB)),
+      ),
+      enabledBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(10),
+        borderSide: const BorderSide(color: Color(0xFFE5E7EB)),
+      ),
+      focusedBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(10),
+        borderSide: const BorderSide(color: Color(0xFF84C900)),
+      ),
+    );
+  }
+
 }

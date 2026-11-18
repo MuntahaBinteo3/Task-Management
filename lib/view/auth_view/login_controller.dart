@@ -1,9 +1,11 @@
 import 'dart:convert';
-
+import 'package:get/get.dart';
 import 'package:task_management/Constant/appurl.dart';
 import 'package:http/http.dart';
 
 class LoginController {
+  var isLoading = false.obs;
+
   Future<void> login({required String email, required String password}) async {
     print('Login function called');
     try {
